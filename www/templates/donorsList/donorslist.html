@@ -1,0 +1,21 @@
+<ion-view title="Donors List">
+    <div class="card">
+        <div class="item item-text-wrap" ng-repeat="donor in fetchedDonors">
+           <span>{{donor.fname}} {{donor.lname}}({{donor.age}}{{donor.gender}})</span>
+           <a href="tel:{{donor.pmobile}}"><i class="ion-ios-telephone"></i></a>
+           <span class="bloodgroup">{{donor.bloodGroup}}</span>
+           <br>
+           <span>{{donor.pmobile}}</span>
+           <span class="floatright">Drinking</span>
+           <span class="floatright">Smoking</span>
+           <span class="floatright">Sugar</span>
+           <br>
+           <span>{{donor.smobile}}</span>
+           <span class="floatright">Surgery Undertaken</span>
+           <span class="floatright">Blood Pressure</span>
+           <span class="floatright">Ulergy</span>
+           <br>
+           <span>{{donor.address}}</span>
+        </div>
+    </div>
+</ion-view>
