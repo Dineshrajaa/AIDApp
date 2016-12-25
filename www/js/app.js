@@ -42,6 +42,12 @@ angular.module('aid', ['ionic','aid.services','aid.controllers'])
         templateUrl: 'templates/donorsList/register.html',
         controller:'DonorListCtrl'
     })
+        $stateProvider
+        .state('registrationForm', {
+        url: '/registrationForm',
+        templateUrl: 'templates/donorsList/registrationForm.html',
+        controller:'DonorListCtrl'
+    })
         $urlRouterProvider.otherwise('/donorslist');
 })
 
