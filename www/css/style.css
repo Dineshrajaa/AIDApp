@@ -28,3 +28,7 @@
 .registrationForm .logo{
 	padding-top: 0;
 }
+
+.registrationForm{
+	overflow-y: scroll;
+}
