@@ -24,33 +24,25 @@
                 <input type="text" placeholder="Age">
             </label>
             <h3>Habits:</h3>
-            <label class="item item-input">
-                <input type="text" placeholder="Alcohol">
-            </label>
-            <label class="item item-input">
-                <input type="text" placeholder="Smoking">
-            </label>
+            <ion-checkbox ng-model="isCheckedAlcohol">Alcohol</ion-checkbox>
+            <ion-checkbox ng-model="isCheckedSmoking">Smoking</ion-checkbox>
             <h3>Conditions:</h3>
-            <label class="item item-input">
-                <input type="text" placeholder="Blood Pressure">
-            </label>
-            <label class="item item-input">
-                <input type="text" placeholder="Sugar">
-            </label>
-            <label class="item item-input">
-                <input type="text" placeholder="Under take Surgery">
-            </label>
+            <ion-checkbox ng-model="isCheckedBP">Blood Pressure</ion-checkbox>
+            <ion-checkbox ng-model="isCheckedSugar">Sugar</ion-checkbox>
+            <ion-checkbox ng-model="isCheckedSurgery">Under take Surgery</ion-checkbox>
             <label class="item item-input">
                 <input type="text" placeholder="Weight">
             </label>
             <h3>Address:</h3>
             <label class="item item-input">
-                <textarea type="text" placeholder="Blood Pressure"></textarea>
+                <textarea cols='5' rows='5' type="text" placeholder="Address"></textarea>
             </label>
         </div>
     </div>
+    <div class="row">
+        <ion-checkbox ng-model="isCheckedAgree">I agree</ion-checkbox>
+    </div>
     <div class"row">
-       <label><input type="checkbox" class="col-offset-10">I agree</label>
        <button type="reset" class="button button-assertive col-offset-10">
                 Reset
         </button>
