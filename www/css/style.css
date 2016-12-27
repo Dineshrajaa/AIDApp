@@ -32,3 +32,10 @@
 .registrationForm{
 	overflow-y: scroll;
 }
+
+.bloodgroup{
+    border-radius: 50%;
+    padding:10px 5px;
+    background-color: #d66625;
+    color: #fff;
+}
