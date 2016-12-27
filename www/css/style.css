@@ -39,3 +39,14 @@
     background-color: #d66625;
     color: #fff;
 }
+.ion-checkmark-circled:before{
+    color: green;
+}
+.ion-close-circled:before,.ion-home:before,.ion-iphone,h2{
+    color: #d66625;
+}
+
+.pane, .view {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
