@@ -50,3 +50,10 @@
     overflow-x: hidden;
     overflow-y: scroll;
 }
+
+.donorList{
+    margin-top: 75px;
+}
+.bar-positive.bar.bar-header{
+    background-color: #d66625;
+}
