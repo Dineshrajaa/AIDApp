@@ -57,3 +57,31 @@
 .bar-positive.bar.bar-header{
     background-color: #d66625;
 }
+
+.donorList .card .item h2{
+    margin-bottom: 10px;
+}
+.donorList .card .item{
+    margin-top: 15px;
+    box-shadow: 3px 3px 5px 2px #e5e5e5;
+}
+
+.donorList .card .item .width-50,.donorList .card .item .width-100{
+    display: inline-block;
+    float: left;
+    width: 50%;
+}
+
+.donorList .card .item .width-100{
+    width: 100%;
+    margin-top: 15px;
+}
+
+.m-10{
+    margin-bottom: 20px;
+}
+
+.right{
+    float: right;
+    margin-right: 20px;
+}
