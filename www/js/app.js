@@ -48,7 +48,7 @@ angular.module('aid', ['ionic','aid.services','aid.controllers'])
         templateUrl: 'templates/donorsList/registrationForm.html',
         controller:'DonorListCtrl'
     })
-        $urlRouterProvider.otherwise('/register');
+        $urlRouterProvider.otherwise('/donorslist');
 })
 
 
@@ -56,5 +56,5 @@ angular.module('aid', ['ionic','aid.services','aid.controllers'])
 /*Webservice URL*/
 
 /*Development*/
-localStorage.wsURL="http://192.168.1.14:3000/";
+localStorage.wsURL="http://172.16.1.226:3000/";
 

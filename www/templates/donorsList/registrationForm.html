@@ -6,47 +6,47 @@
         <div class="list col">
             <h3>Personal Information:</h3>
             <label class="item item-input">
-                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Name" ng-model="donorObj.fname">
             </label>
             <label class="item item-input">
-                <input type="text" placeholder="Last Name">
+                <input type="text" placeholder="Last Name" ng-model="donorObj.lname">
             </label>
             <label class="item item-input">
-                <input type="text" placeholder="Phone No.">
+                <input type="text" placeholder="Primary No." ng-model="donorObj.pmobile">
             </label>
             <label class="item item-input">
-                <input type="text" placeholder="Mobile No.">
+                <input type="text" placeholder="Secondary No." ng-model="donorObj.smobile">
             </label>
             <label class="item item-input">
                 <input type="text" placeholder="Blood Group">
             </label>
             <label class="item item-input">
-                <input type="text" placeholder="Age">
+                <input type="text" placeholder="Age" ng-model="donorObj.age">
             </label>
             <h3>Habits:</h3>
-            <ion-checkbox ng-model="isCheckedAlcohol">Alcohol</ion-checkbox>
-            <ion-checkbox ng-model="isCheckedSmoking">Smoking</ion-checkbox>
+            <ion-checkbox ng-model="donorObj.drinker" ngTrueValue="yes" ngFalseValue="no">Alcohol</ion-checkbox>
+            <ion-checkbox ng-model="donorObj.smoker" ngTrueValue="yes" ngFalseValue="no">Smoking</ion-checkbox>
             <h3>Conditions:</h3>
-            <ion-checkbox ng-model="isCheckedBP">Blood Pressure</ion-checkbox>
-            <ion-checkbox ng-model="isCheckedSugar">Sugar</ion-checkbox>
-            <ion-checkbox ng-model="isCheckedSurgery">Under take Surgery</ion-checkbox>
+            <ion-checkbox ng-model="donorObj.bp" ngTrueValue="yes" ngFalseValue="no">Blood Pressure</ion-checkbox>
+            <ion-checkbox ng-model="donorObj.sugar" ngTrueValue="yes" ngFalseValue="no">Sugar</ion-checkbox>
+            <ion-checkbox ng-model="donorObj.surgery" ngTrueValue="yes" ngFalseValue="no">Under take Surgery</ion-checkbox>
             <label class="item item-input">
-                <input type="text" placeholder="Weight">
+                <input type="text" placeholder="Weight" ng-model="donorObj.weight">
             </label>
             <h3>Address:</h3>
             <label class="item item-input">
-                <textarea cols='5' rows='5' type="text" placeholder="Address"></textarea>
+                <textarea cols='5' rows='5' type="text" placeholder="Address" ng-model="donorObj.address"></textarea>
             </label>
         </div>
     </div>
-    <div class="m-10">
+    <!-- <div class="m-10">
         <ion-checkbox ng-model="isCheckedAgree">I agree</ion-checkbox>
-    </div>
-    <div class"row">
+    </div> -->
+    <div class="row">
        <button type="reset" class="button button-assertive col-offset-10">
                 Reset
         </button>
-        <button type="submit" class="button button-assertive right">
+        <button type="button" class="button button-assertive right" ng-click="addDonor()">
             Submit
         </button>
     </div>
