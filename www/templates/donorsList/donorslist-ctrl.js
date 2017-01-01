@@ -1,6 +1,6 @@
 angular.module('aid.controllers', ['aid.services'])
 
-.controller('DonorListCtrl', function($scope, DonorsSvc) {
+.controller('DonorListCtrl', function($scope, $ionicFilterBar,DonorsSvc) {
     $scope.donorObj = {};
     $scope.fetchDonorsList = function() {
         // Method to get the list of donors
@@ -20,4 +20,15 @@ angular.module('aid.controllers', ['aid.services'])
             console.warn(JSON.stringify(err));
         });
     }
+    $scope.showFilterBar = function() {
+        filterBarInstance = $ionicFilterBar.show({
+            items: $scope.fetchedDonors,
+            update: function(filteredItems, filterText) {
+                $scope.fetchedDonors = filteredItems;
+                if (filterText) {
+                    console.log(filterText);
+                }
+            }
+        });
+    };
 })

@@ -5,7 +5,7 @@
         An Simple blood donor management app.
     </description>
     <author email="dineshrajaa.93@gmail.com" href="http://example.com/">
-      Dinesh Raja
+        Dinesh Raja
     </author>
     <content src="index.html" />
     <access origin="*" />
@@ -43,5 +43,8 @@
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
     </platform>
     <plugin name="cordova-plugin-whitelist" spec="~1.3.1" />
-    <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />    
+    <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
+    <platform name="ios">
+        <preference name="KeyboardDisplayRequiresUserAction" value="false" />
+    </platform>
 </widget>

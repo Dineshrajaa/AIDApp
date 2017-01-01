@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('aid', ['ionic','aid.services','aid.controllers'])
+angular.module('aid', ['ionic','jett.ionic.filter.bar','aid.services','aid.controllers'])
 
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -56,5 +56,5 @@ angular.module('aid', ['ionic','aid.services','aid.controllers'])
 /*Webservice URL*/
 
 /*Development*/
-localStorage.wsURL="http://172.16.1.226:3000/";
+localStorage.wsURL="http://192.168.43.255:3000/";
 

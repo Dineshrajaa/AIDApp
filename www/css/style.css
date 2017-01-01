@@ -85,3 +85,9 @@
     float: right;
     margin-right: 20px;
 }
+
+.button-right{
+  display: block !important;
+  width: 100% !important;
+  text-align:right !important;
+}
