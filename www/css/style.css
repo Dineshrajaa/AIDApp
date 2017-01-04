@@ -113,3 +113,7 @@
 .button-clear.button-clear {
     color: #000;
 }
+
+.button.button-assertive {
+    background-color: #d66625;
+}
