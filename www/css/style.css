@@ -83,11 +83,19 @@
 
 .right{
     float: right;
-    margin-right: 20px;
 }
 
 .button-right{
   display: block !important;
   width: 100% !important;
   text-align:right !important;
+}
+
+.addDonor img{
+    float: right;
+    margin-right: 20px;
+}
+
+.btn-grp{
+    margin: 10px 20px;
 }
