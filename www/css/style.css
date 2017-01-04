@@ -118,9 +118,21 @@
 .button.button-assertive {
     background-color: #d66625;
 }
-
+.checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
+    background: #d66625;
+    border-color: #d66625;
+}
+.ion-checkmark:before {
+    color: #d66625;
+}
 .circle{
     right: 62px;
     width: 40px;
     height: 40px;
+}
+
+.circle.ion-iphone:before{
+    font-size: 23px;
+    color: #fff;
+    margin-left: 10px;
 }
