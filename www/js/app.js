@@ -48,7 +48,7 @@ angular.module('aid', ['ionic','jett.ionic.filter.bar','aid.services','aid.contr
         templateUrl: 'templates/donorsList/registrationForm.html',
         controller:'DonorListCtrl'
     })
-        $urlRouterProvider.otherwise('/registrationForm');
+        $urlRouterProvider.otherwise('/donorslist');
 })
 
 
