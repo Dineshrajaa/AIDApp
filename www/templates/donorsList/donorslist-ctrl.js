@@ -13,7 +13,7 @@ angular.module('aid.controllers', ['aid.services'])
     }
     $scope.fetchDonorsList();
     $scope.addDonor = function() {
-        // Method to add donor       
+        // Method to add donor
         DonorsSvc.storeDonor(DonorsSvc.buildDonorObj($scope.donorObj)).then(function(res) {
             console.warn(JSON.stringify(res));
         }, function(err) {

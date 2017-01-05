@@ -166,3 +166,7 @@ h3, .h3 {
     bottom: 5px;
     margin-right: 10px;
 }
+.ion-checkmark:before {
+    content: "\f3a7";
+    font-size: 32px;
+}
