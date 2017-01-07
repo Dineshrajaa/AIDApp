@@ -56,5 +56,5 @@ angular.module('aid', ['ionic','jett.ionic.filter.bar','aid.services','aid.contr
 /*Webservice URL*/
 
 /*Development*/
-localStorage.wsURL="http://192.168.43.255:3000/";
+localStorage.wsURL="http://172.16.1.226:3000/";
 
