@@ -170,3 +170,11 @@ h3, .h3 {
     content: "\f3a7";
     font-size: 32px;
 }
+.ion-search{
+    box-shadow: 0px 0px 2px 1px #d66625;
+}
+.ion-search:before,.placeholder-icon,
+.button-clear.button-clear,
+.filter-bar .filter-bar-wrapper .item-input-inset .item-input-wrapper .filter-bar-clear.button:before{
+    color: #d66625;
+}
