@@ -43,6 +43,11 @@
     top: 10px;
     text-decoration: none;
 }
+.bloodgroup.type{
+    width: 42px;
+    text-align: center;
+    height: 42px;
+}
 .ion-checkmark-circled:before{
     color: green;
 }
@@ -127,14 +132,14 @@
 }
 .circle{
     right: 62px;
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
 }
 
 .circle.ion-iphone:before{
     font-size: 23px;
     color: #fff;
-    margin-left: 10px;
+    margin-left: 12px;
 }
 
 .item-input,.item-checkbox,.item-radio{
