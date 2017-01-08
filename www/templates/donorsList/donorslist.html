@@ -1,13 +1,17 @@
-<ion-header-bar align-title="center" class="bar">
+<!-- <ion-header-bar align-title="center" class="bar">
+    <h1 class="title">Donors List</h1>
     <button class="button icon ion-search button-right" ng-click="showFilterBar()"></button>
-</ion-header-bar>
-<ion-view title="Donors List">
-    <ion-content>
-    <ion-refresher pulling-icon="ion-arrow-down-b" on-refresh="fetchDonorsList()">
-    </ion-refresher>
-    <div class="donorList">
+</ion-header-bar> -->
+<ion-view view-title="Donors List">
+    <ion-header-bar class="bar-positive">
         <h1 class="title">Donors List</h1>
-        <!-- <label class="item item-input">
+        <button class="button icon ion-search" ng-click="showFilterBar()"></button>
+    </ion-header-bar>
+    <ion-content overflow-scroll="true">
+        <ion-refresher pulling-icon="ion-arrow-down-b" pulling-text="Pull to refresh..." on-refresh="fetchDonorsList()">
+        </ion-refresher>
+        <div class="donorList">
+            <!-- <label class="item item-input">
             <input type="text" placeholder="Country">
         </label>
         <label class="item item-input">
@@ -19,52 +23,52 @@
         <label class="item item-input">
             <input type="text" placeholder="Blood Group">
         </label> -->
-        <div class="card" ng-repeat="donor in fetchedDonors">
-            <div class="item item-text-wrap clearfix">
-                <h2>{{donor.fname}} {{donor.lname}}</h2>
-                <a href="tel:{{donor.pmobile}}" class="bloodgroup circle ion-iphone"></a>
-                <a href="" class="bloodgroup">{{donor.bloodGroup}}</a>
-                <div class="accordion-content clearfix">
-                    <div class="width-50">
-                        <i class="ion-iphone"></i>
-                        <span>+91 {{donor.pmobile}}</span>
-                    </div>
-                    <div class="width-50">
-                        <i ng-class="{'ion-checkmark-circled':donor.habits.alcohol,'ion-close-circled':donor.habits.alcohol==undefined}"></i>
-                        <span class="">Drinking</span>
-                    </div>
-                    <div class="width-50">
-                        <i  ng-class="{'ion-checkmark-circled':donor.habits.smoker,'ion-close-circled':donor.habits.smoker==undefined}"></i>
-                        <span class="">Smoking</span>
-                    </div>
-                    <div class="width-50">
-                        <i ng-class="{'ion-checkmark-circled':donor.conditions.sugar,'ion-close-circled':donor.conditions.sugar==undefined}"></i>
-                        <span class="">Sugar</span>
-                    </div>
-                    <div class="width-50" ng-if="donor.smobile">
-                        <i class="ion-iphone"></i>
-                        <span >+91 {{donor.smobile}}</span>
-                    </div>
-                    <div class="width-100">
-                        <i ng-class="{'ion-checkmark-circled':donor.conditions.surgery,'ion-close-circled':donor.conditions.surgery==undefined}"></i>
-                        <span class="">Surgery Undertaken</span>
-                    </div>
-                    <div class="width-50">
-                        <i ng-class="{'ion-checkmark-circled':donor.conditions.bp,'ion-close-circled':donor.conditions.bp==undefined}"></i>
-                        <span class="">Blood Pressure</span>
-                    </div>
-                    <!-- <div class="width-50">
+            <div class="card" ng-repeat="donor in fetchedDonors">
+                <div class="item item-text-wrap clearfix">
+                    <h2>{{donor.fname}} {{donor.lname}}</h2>
+                    <a href="tel:{{donor.pmobile}}" class="bloodgroup circle ion-iphone"></a>
+                    <a href="" class="bloodgroup">{{donor.bloodGroup}}</a>
+                    <div class="accordion-content clearfix">
+                        <div class="width-50">
+                            <i class="ion-iphone"></i>
+                            <span>+91 {{donor.pmobile}}</span>
+                        </div>
+                        <div class="width-50">
+                            <i ng-class="{'ion-checkmark-circled':donor.habits.alcohol,'ion-close-circled':donor.habits.alcohol==undefined}"></i>
+                            <span class="">Drinking</span>
+                        </div>
+                        <div class="width-50">
+                            <i ng-class="{'ion-checkmark-circled':donor.habits.smoker,'ion-close-circled':donor.habits.smoker==undefined}"></i>
+                            <span class="">Smoking</span>
+                        </div>
+                        <div class="width-50">
+                            <i ng-class="{'ion-checkmark-circled':donor.conditions.sugar,'ion-close-circled':donor.conditions.sugar==undefined}"></i>
+                            <span class="">Sugar</span>
+                        </div>
+                        <div class="width-50" ng-if="donor.smobile">
+                            <i class="ion-iphone"></i>
+                            <span>+91 {{donor.smobile}}</span>
+                        </div>
+                        <div class="width-100">
+                            <i ng-class="{'ion-checkmark-circled':donor.conditions.surgery,'ion-close-circled':donor.conditions.surgery==undefined}"></i>
+                            <span class="">Surgery Undertaken</span>
+                        </div>
+                        <div class="width-50">
+                            <i ng-class="{'ion-checkmark-circled':donor.conditions.bp,'ion-close-circled':donor.conditions.bp==undefined}"></i>
+                            <span class="">Blood Pressure</span>
+                        </div>
+                        <!-- <div class="width-50">
                         <i class="ion-checkmark-circled"></i>
                         <span class="">Ulergy</span>
                     </div> -->
-                    <div class="width-100">
-                        <i class="ion-home"></i>
-                        <span>{{donor.address}}</span>
+                        <div class="width-100">
+                            <i class="ion-home"></i>
+                            <span>{{donor.address}}</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- <div class="card">
+            <!-- <div class="card">
             <div class="item item-text-wrap clearfix">
                 <h2>N.Jayaprakash</h2>
                 <a href="#" class="bloodgroup circle ion-iphone"></a>
@@ -154,7 +158,7 @@
                 </div>
             </div>
         </div> -->
-    </div>
+        </div>
     </ion-content>
 </ion-view>
 <a ui-sref="registrationForm" class="addDonor">

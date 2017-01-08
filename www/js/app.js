@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('aid', ['ionic','jett.ionic.filter.bar','aid.services','aid.controllers'])
+angular.module('aid', ['ionic', 'ngMessages', 'jett.ionic.filter.bar', 'aid.services', 'aid.controllers'])
 
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -26,29 +26,29 @@ angular.module('aid', ['ionic','jett.ionic.filter.bar','aid.services','aid.contr
 .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('donorslist', {
-        url: '/donorslist',
-        templateUrl: 'templates/donorsList/donorslist.html',
-        controller:'DonorListCtrl'
-    })
-        $stateProvider
+            url: '/donorslist',
+            templateUrl: 'templates/donorsList/donorslist.html',
+            controller: 'DonorListCtrl'
+        })
+    $stateProvider
         .state('adddonor', {
-        url: '/adddonor',
-        templateUrl: 'templates/donorsList/adddonor.html',
-        controller:'DonorListCtrl'
-    })
-         $stateProvider
+            url: '/adddonor',
+            templateUrl: 'templates/donorsList/adddonor.html',
+            controller: 'DonorListCtrl'
+        })
+    $stateProvider
         .state('register', {
-        url: '/register',
-        templateUrl: 'templates/donorsList/register.html',
-        controller:'DonorListCtrl'
-    })
-        $stateProvider
+            url: '/register',
+            templateUrl: 'templates/donorsList/register.html',
+            controller: 'DonorListCtrl'
+        })
+    $stateProvider
         .state('registrationForm', {
-        url: '/registrationForm',
-        templateUrl: 'templates/donorsList/registrationForm.html',
-        controller:'DonorListCtrl'
-    })
-        $urlRouterProvider.otherwise('/donorslist');
+            url: '/registrationForm',
+            templateUrl: 'templates/donorsList/registrationForm.html',
+            controller: 'DonorListCtrl'
+        })
+    $urlRouterProvider.otherwise('/donorslist');
 })
 
 
@@ -56,5 +56,4 @@ angular.module('aid', ['ionic','jett.ionic.filter.bar','aid.services','aid.contr
 /*Webservice URL*/
 
 /*Development*/
-localStorage.wsURL="http://172.16.1.226:3000/";
-
+localStorage.wsURL = "http://192.168.43.95:3000/";

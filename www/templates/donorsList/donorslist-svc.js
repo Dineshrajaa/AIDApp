@@ -45,4 +45,17 @@ angular.module('aid.services', [])
             console.log("The loading indicator is now hidden");
         });
     }
+    this.showToast = function(msg) {
+        /*Customized Toast Message*/
+        window.plugins.toast.showWithOptions({
+            message: msg,
+            duration: "short", // 2000 ms
+            position: "bottom",
+            styling: {
+                opacity: 0.75, // 0.0 (transparent) to 1.0 (opaque). Default 0.8
+                backgroundColor: '#d66625', // make sure you use #RRGGBB. Default #333333
+                textColor: '#FFFFFF'
+            }
+        });
+    }
 })

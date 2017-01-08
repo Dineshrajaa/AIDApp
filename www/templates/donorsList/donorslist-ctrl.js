@@ -1,19 +1,16 @@
 angular.module('aid.controllers', ['aid.services'])
 
-.controller('DonorListCtrl', function($scope, $ionicFilterBar, DonorsSvc,GenericSvc) {
+.controller('DonorListCtrl', function($scope, $state, $ionicFilterBar, DonorsSvc, GenericSvc) {
     $scope.donorObj = {};
     $scope.fetchDonorsList = function() {
         // Method to get the list of donors
         GenericSvc.showLoader('Fetching Donors');
         DonorsSvc.getDonorsList().then(function(res) {
-            console.warn(JSON.stringify(res));
             $scope.fetchedDonors = res.data;
-
         }, function(err) {
-            console.warn(JSON.stringify(err));
+            GenericSvc.showToast('Unable to fetch Donors list');
         }).finally(function() {
             // Stop the ion-refresher from spinning
-            console.log("Load complete");
             $scope.$broadcast('scroll.refreshComplete');
             GenericSvc.hideLoader();
         });
@@ -23,12 +20,16 @@ angular.module('aid.controllers', ['aid.services'])
         // Method to add donor
         GenericSvc.showLoader('Adding Donor');
         DonorsSvc.storeDonor(DonorsSvc.buildDonorObj($scope.donorObj)).then(function(res) {
-            console.warn(JSON.stringify(res));
+            $state.go('donorslist');
         }, function(err) {
-            console.warn(JSON.stringify(err));
+            GenericSvc.showToast('Unable to add Donor');
         }).finally(function() {
             GenericSvc.hideLoader();
         });
+    };
+    $scope.resetForm = function() {
+        // Method to reset the add donor form
+        $scope.donorObj = {};
     };
     $scope.showFilterBar = function() {
         filterBarInstance = $ionicFilterBar.show({
