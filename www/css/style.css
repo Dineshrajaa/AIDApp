@@ -87,6 +87,12 @@
     margin-top: 5px;
 }
 
+.bar-positive .button,.bar-positive .button:active {
+    border-color: transparent;
+    background-color: transparent;
+    color: #fff;
+}
+
 .donorList h1{
     font-size: 22px;
     text-align: center;
@@ -182,6 +188,9 @@ h3, .h3 {
 .button-clear.button-clear,
 .filter-bar .filter-bar-wrapper .item-input-inset .item-input-wrapper .filter-bar-clear.button:before{
     color: #d66625;
+}
+.filter-bar-clear.button.button-icon.icon.ion-ios-close:before{
+    color: #fff !important;
 }
 
 /*.ion-search:before,*/
