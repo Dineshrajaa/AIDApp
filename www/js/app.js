@@ -31,12 +31,6 @@ angular.module('aid', ['ionic', 'ngMessages', 'jett.ionic.filter.bar', 'aid.serv
             controller: 'DonorListCtrl'
         })
     $stateProvider
-        .state('adddonor', {
-            url: '/adddonor',
-            templateUrl: 'templates/donorsList/adddonor.html',
-            controller: 'DonorListCtrl'
-        })
-    $stateProvider
         .state('register', {
             url: '/register',
             templateUrl: 'templates/donorsList/register.html',
@@ -46,7 +40,7 @@ angular.module('aid', ['ionic', 'ngMessages', 'jett.ionic.filter.bar', 'aid.serv
         .state('registrationForm', {
             url: '/registrationForm',
             templateUrl: 'templates/donorsList/registrationForm.html',
-            controller: 'DonorListCtrl'
+            controller: 'AddDonorCtrl'
         })
     $urlRouterProvider.otherwise('/donorslist');
 })
@@ -56,4 +50,4 @@ angular.module('aid', ['ionic', 'ngMessages', 'jett.ionic.filter.bar', 'aid.serv
 /*Webservice URL*/
 
 /*Development*/
-localStorage.wsURL = "http://172.16.1.226:3000/";
+localStorage.wsURL = "https://agile-caverns-88198.herokuapp.com/";

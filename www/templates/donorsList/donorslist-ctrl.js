@@ -1,7 +1,7 @@
 angular.module('aid.controllers', ['aid.services'])
 
-.controller('DonorListCtrl', function($scope, $state, $ionicFilterBar, DonorsSvc, GenericSvc) {
-    $scope.donorObj = {};
+.controller('DonorListCtrl', function($scope, $ionicFilterBar, DonorsSvc, GenericSvc) {
+
     $scope.fetchDonorsList = function() {
         // Method to get the list of donors
         GenericSvc.showLoader('Fetching Donors');
@@ -15,7 +15,29 @@ angular.module('aid.controllers', ['aid.services'])
             GenericSvc.hideLoader();
         });
     };
+
+
+    $scope.showFilterBar = function() {
+        filterBarInstance = $ionicFilterBar.show({
+            items: $scope.fetchedDonors,
+            update: function(filteredItems, filterText) {
+                $scope.fetchedDonors = filteredItems;
+                if (filterText) {
+                    console.log(filterText);
+                }
+            }
+        });
+    };
+    /*$scope.$on("$ionicView.enter", function(event, data) {
+        // handle event
+        console.warn("View entered");
+        
+    });*/
     $scope.fetchDonorsList();
+})
+
+.controller('AddDonorCtrl', function($scope, $state, DonorsSvc, GenericSvc) {
+    $scope.donorObj = {};
     $scope.addDonor = function() {
         // Method to add donor
         GenericSvc.showLoader('Adding Donor');
@@ -31,15 +53,4 @@ angular.module('aid.controllers', ['aid.services'])
         // Method to reset the add donor form
         $scope.donorObj = {};
     };
-    $scope.showFilterBar = function() {
-        filterBarInstance = $ionicFilterBar.show({
-            items: $scope.fetchedDonors,
-            update: function(filteredItems, filterText) {
-                $scope.fetchedDonors = filteredItems;
-                if (filterText) {
-                    console.log(filterText);
-                }
-            }
-        });
-    };
-});
+})
