@@ -56,4 +56,4 @@ angular.module('aid', ['ionic', 'ngMessages', 'jett.ionic.filter.bar', 'aid.serv
 /*Webservice URL*/
 
 /*Development*/
-localStorage.wsURL = "http://192.168.43.95:3000/";
+localStorage.wsURL = "http://172.16.1.226:3000/";
