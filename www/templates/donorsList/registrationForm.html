@@ -26,12 +26,19 @@
             <label class="item item-input">
                 <input type="text" placeholder="Secondary No." ng-model="donorObj.smobile">
             </label>
-            <label class="item item-input">
+            <!-- <label class="item item-input">
                 <input type="text" name="bloodGroup" placeholder="Blood Group" ng-model="donorObj.bloodGroup" ng-required="true">
+            </label> -->
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Blood Group
+                </div>
+                <select ng-options="item.bg for item in bloodList">                    
+                </select>
             </label>
-            <div class="error-container" ng-show="registrationForm.bloodGroup.$error" ng-messages="registrationForm.bloodGroup.$error">
+            <!-- <div class="error-container" ng-show="registrationForm.bloodGroup.$error" ng-messages="registrationForm.bloodGroup.$error">
                 <div ng-messages-include="error-list.html"></div>
-            </div>
+            </div> -->
             <label class="item item-input">
                 <input type="text" name="age" placeholder="Age" ng-model="donorObj.age" ng-required="true">
             </label>

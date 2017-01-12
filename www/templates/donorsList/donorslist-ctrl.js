@@ -37,6 +37,7 @@ angular.module('aid.controllers', ['aid.services'])
 })
 
 .controller('AddDonorCtrl', function($scope, $state, DonorsSvc, GenericSvc) {
+    $scope.bloodList=[{bg:'A+'},{bg:'B+'},{bg:'AB+'},{bg:'O+'},{bg:'A-'},{bg:'B-'},{bg:'AB-'},{bg:'O-'}];
     $scope.donorObj = {};
     $scope.addDonor = function() {
         // Method to add donor
@@ -53,4 +54,11 @@ angular.module('aid.controllers', ['aid.services'])
         // Method to reset the add donor form
         $scope.donorObj = {};
     };
+})
+
+.controller('InitialCtrl',function($scope){
+    $scope.markFirstRun=function(){
+        // Method to mark 
+        localStorage.firstRun="false";
+    }
 })

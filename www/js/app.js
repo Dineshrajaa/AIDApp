@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('aid', ['ionic', 'ngMessages', 'jett.ionic.filter.bar', 'aid.services', 'aid.controllers'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,$state) {
     $ionicPlatform.ready(function() {
         if (window.cordova && window.cordova.plugins.Keyboard) {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -19,6 +19,14 @@ angular.module('aid', ['ionic', 'ngMessages', 'jett.ionic.filter.bar', 'aid.serv
         }
         if (window.StatusBar) {
             StatusBar.styleDefault();
+        }
+
+        if(typeof localStorage.firstRun== "undefined"){
+            // App has been instantiated for the first time
+            $state.go('register');
+        }else{
+            // App has been already opened
+            $state.go('donorslist');
         }
     });
 })
@@ -34,7 +42,7 @@ angular.module('aid', ['ionic', 'ngMessages', 'jett.ionic.filter.bar', 'aid.serv
         .state('register', {
             url: '/register',
             templateUrl: 'templates/donorsList/register.html',
-            controller: 'DonorListCtrl'
+            controller: 'InitialCtrl'
         })
     $stateProvider
         .state('registrationForm', {
@@ -42,7 +50,7 @@ angular.module('aid', ['ionic', 'ngMessages', 'jett.ionic.filter.bar', 'aid.serv
             templateUrl: 'templates/donorsList/registrationForm.html',
             controller: 'AddDonorCtrl'
         })
-    $urlRouterProvider.otherwise('/donorslist');
+    // $urlRouterProvider.otherwise('/donorslist');
 })
 
 
