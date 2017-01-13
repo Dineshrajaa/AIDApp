@@ -18,13 +18,13 @@
                 <div ng-messages-include="error-list.html"></div>
             </div>
             <label class="item item-input">
-                <input type="text" name="pmobile" placeholder="Primary No." ng-model="donorObj.pmobile" ng-required="true">
+                <input type="tel" name="pmobile" placeholder="Primary No." ng-model="donorObj.pmobile" ng-required="true">
             </label>
             <div class="error-container" ng-show="registrationForm.pmobile.$error" ng-messages="registrationForm.pmobile.$error">
                 <div ng-messages-include="error-list.html"></div>
             </div>
             <label class="item item-input">
-                <input type="text" placeholder="Secondary No." ng-model="donorObj.smobile">
+                <input type="tel" placeholder="Secondary No." ng-model="donorObj.smobile">
             </label>
             <!-- <label class="item item-input">
                 <input type="text" name="bloodGroup" placeholder="Blood Group" ng-model="donorObj.bloodGroup" ng-required="true">
@@ -33,7 +33,7 @@
                 <div class="input-label">
                     Blood Group
                 </div>
-                <select ng-options="item.bg for item in bloodList">                    
+                <select ng-options="blood as blood for blood in bloodList" ng-model="donorObj.bloodGroup">                    
                 </select>
             </label>
             <!-- <div class="error-container" ng-show="registrationForm.bloodGroup.$error" ng-messages="registrationForm.bloodGroup.$error">

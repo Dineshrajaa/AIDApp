@@ -37,8 +37,10 @@ angular.module('aid.controllers', ['aid.services'])
 })
 
 .controller('AddDonorCtrl', function($scope, $state, DonorsSvc, GenericSvc) {
-    $scope.bloodList=[{bg:'A+'},{bg:'B+'},{bg:'AB+'},{bg:'O+'},{bg:'A-'},{bg:'B-'},{bg:'AB-'},{bg:'O-'}];
+    // $scope.bloodList=[{bg:'A+'},{bg:'B+'},{bg:'AB+'},{bg:'O+'},{bg:'A-'},{bg:'B-'},{bg:'AB-'},{bg:'O-'}];
+    $scope.bloodList=['A+','B+','AB+','O+','A-','B-','AB-','O-'];
     $scope.donorObj = {};
+    $scope.donorObj.bloodGroup='A+';
     $scope.addDonor = function() {
         // Method to add donor
         GenericSvc.showLoader('Adding Donor');
