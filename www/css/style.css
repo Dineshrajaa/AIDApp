@@ -192,5 +192,39 @@ h3, .h3 {
 .filter-bar-clear.button.button-icon.icon.ion-ios-close:before{
     color: #fff !important;
 }
+.button.button-assertive.reset{
+    float: right;
+    margin-right: 20px;
+    min-height: 35px;
+    line-height: 35px;
+}
+.button.button-assertive.submit{
+    float: right;
+    min-height: 35px;
+    line-height: 35px;
+}
+
+label.agreement.item.item-checkbox {
+    width: 40%;
+    display: inline-block;
+    padding: 6px 0;
+    border: none;
+    box-shadow: none;
+}
+label.agreement.item.item-checkbox .checkbox {
+    padding-left: 0;
+}
+label.agreement.item .checkbox-icon:before{
+    border-radius: 0;
+    border-color: #d66625;
+    box-shadow: 1px 0px 5px 1px #ddd;
+}
+label.agreement.item .item-content.disable-pointer-events {
+    margin-left: 46px;
+}
+label.agreement.item .item-content.disable-pointer-events span{
+    color: #000;
+    font-size: 14px;
+}
 
 /*.ion-search:before,*/
