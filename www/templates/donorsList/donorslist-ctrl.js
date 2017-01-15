@@ -1,7 +1,7 @@
 angular.module('aid.controllers', ['aid.services'])
 
 .controller('DonorListCtrl', function($scope, $ionicFilterBar, DonorsSvc, GenericSvc) {
-
+    $scope.myOrder = 'weight';
     $scope.fetchDonorsList = function() {
         // Method to get the list of donors
         GenericSvc.showLoader('Fetching Donors');
@@ -16,7 +16,10 @@ angular.module('aid.controllers', ['aid.services'])
         });
     };
 
-
+    $scope.setSortCriteria=function(criteria){
+        // Method to set sort criteria
+        $scope.myOrder =criteria;
+    };
     $scope.showFilterBar = function() {
         filterBarInstance = $ionicFilterBar.show({
             items: $scope.fetchedDonors,
@@ -45,6 +48,7 @@ angular.module('aid.controllers', ['aid.services'])
         // Method to add donor
         GenericSvc.showLoader('Adding Donor');
         DonorsSvc.storeDonor(DonorsSvc.buildDonorObj($scope.donorObj)).then(function(res) {
+            localStorage.firstRun="false";
             $state.go('donorslist');
         }, function(err) {
             GenericSvc.showToast('Unable to add Donor');
@@ -61,6 +65,6 @@ angular.module('aid.controllers', ['aid.services'])
 .controller('InitialCtrl',function($scope){
     $scope.markFirstRun=function(){
         // Method to mark 
-        localStorage.firstRun="false";
+        // localStorage.firstRun="false";
     }
 })

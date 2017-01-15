@@ -1,13 +1,13 @@
-.bloodgroup{
-	float: right;
+.bloodgroup {
+    float: right;
 }
 
-.floatright{
-	float: right;
+.floatright {
+    float: right;
 }
 
-.register{
-	background: url(../img/background.jpg);
+.register {
+    background: url(../img/background.jpg);
     height: 100%;
     background-position: center;
     background-size: cover;
@@ -15,27 +15,28 @@
     text-align: center;
 }
 
-.logo{
-	width: 75px;
+.logo {
+    width: 75px;
     margin: auto;
     display: block;
     padding-top: 75px;
 }
-.progress{
-	margin-top: 87px;
+
+.progress {
+    margin-top: 87px;
 }
 
-.registrationForm .logo{
-	padding-top: 0;
+.registrationForm .logo {
+    padding-top: 0;
 }
 
-.registrationForm{
-	overflow-y: scroll;
+.registrationForm {
+    overflow-y: scroll;
 }
 
-.bloodgroup{
+.bloodgroup {
     border-radius: 50%;
-    padding:10px 5px;
+    padding: 10px 5px;
     background-color: #d66625;
     color: #fff;
     position: absolute;
@@ -43,82 +44,95 @@
     top: 10px;
     text-decoration: none;
 }
-.bloodgroup.type{
+
+.bloodgroup.type {
     width: 42px;
     text-align: center;
     height: 42px;
 }
-.ion-checkmark-circled:before{
+
+.ion-checkmark-circled:before {
     color: green;
 }
-.ion-close-circled:before,.ion-home:before,.ion-iphone,h2{
+
+.ion-close-circled:before,
+.ion-home:before,
+.ion-iphone,
+h2 {
     color: #d66625;
 }
 
-.pane, .view {
+.pane,
+.view {
     overflow-x: hidden;
     overflow-y: scroll;
 }
 
-.donorList{
+.donorList {
     margin-top: 75px;
 }
-.bar-positive.bar.bar-header,.bar-positive .button,.bar-positive input{
+
+.bar-positive.bar.bar-header,
+.bar-positive .button,
+.bar-positive input {
     background-color: #d66625 !important;
 }
 
-.donorList .card .item h2{
+.donorList .card .item h2 {
     margin-bottom: 20px;
 }
-.donorList .card .item{
+
+.donorList .card .item {
     margin-top: 15px;
     box-shadow: 3px 3px 5px 2px #e5e5e5;
 }
 
-.donorList .card .item .width-50,.donorList .card .item .width-100{
+.donorList .card .item .width-50,
+.donorList .card .item .width-100 {
     display: inline-block;
     float: left;
     width: 50%;
     padding: 5px 0;
 }
 
-.donorList .card .item .width-100{
+.donorList .card .item .width-100 {
     width: 100%;
     margin-top: 5px;
 }
 
-.bar-positive .button,.bar-positive .button:active {
+.bar-positive .button,
+.bar-positive .button:active {
     border-color: transparent;
     background-color: transparent;
     color: #fff;
 }
 
-.donorList h1{
+.donorList h1 {
     font-size: 22px;
     text-align: center;
     margin-bottom: 20px;
 }
 
-.m-10{
+.m-10 {
     margin-bottom: 20px;
 }
 
-.right{
+.right {
     float: right;
 }
 
-.button-right{
-  display: block !important;
-  width: 100% !important;
-  text-align:right !important;
+.button-right {
+    display: block !important;
+    width: 100% !important;
+    text-align: right !important;
 }
 
-.addDonor img{
+.addDonor img {
     float: right;
     margin-right: 20px;
 }
 
-.btn-grp{
+.btn-grp {
     margin: 10px 20px;
 }
 
@@ -126,49 +140,69 @@
     color: #000;
 }
 
+.sortbuttons {
+    margin-top: 10px;
+}
+
+.sortbuttons .button {
+    border: 1px solid #d66625;
+}
+
 .button.button-assertive {
     background-color: #d66625;
 }
-.checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
+
+.checkbox input:checked:before,
+.checkbox input:checked + .checkbox-icon:before {
     background: #d66625;
     border-color: #d66625;
 }
+
 .ion-checkmark:before {
     color: #d66625;
 }
-.circle{
+
+.circle {
     right: 62px;
     width: 42px;
     height: 42px;
 }
 
-.circle.ion-iphone:before{
+.circle.ion-iphone:before {
     font-size: 23px;
     color: #fff;
     margin-left: 12px;
 }
 
-.item-input,.item-checkbox,.item-radio{
+.item-input,
+.item-checkbox,
+.item-radio {
     margin-bottom: 15px;
     box-shadow: 1px 0px 5px 1px #ddd;
 }
 
-.item-input *,.item-checkbox *,.item-radio *,input{
+.item-input *,
+.item-checkbox *,
+.item-radio *,
+input {
     color: #d66625;
 }
-.item-input input, .item-input textarea {
+
+.item-input input,
+.item-input textarea {
     color: #d66625;
     font-size: 16px;
 }
 
-h3, .h3 {
+h3,
+.h3 {
     font-size: 20px;
 }
-
 
 .registerBtn {
     margin-top: 10px;
 }
+
 .addDonor img {
     /* float: right; */
     position: fixed;
@@ -177,28 +211,34 @@ h3, .h3 {
     bottom: 5px;
     margin-right: 10px;
 }
+
 .ion-checkmark:before {
     content: "\f3a7";
     font-size: 32px;
 }
-.ion-search{
+
+.ion-search {
     box-shadow: 0px 0px 2px 1px #d66625;
 }
+
 .placeholder-icon,
 .button-clear.button-clear,
-.filter-bar .filter-bar-wrapper .item-input-inset .item-input-wrapper .filter-bar-clear.button:before{
+.filter-bar .filter-bar-wrapper .item-input-inset .item-input-wrapper .filter-bar-clear.button:before {
     color: #d66625;
 }
-.filter-bar-clear.button.button-icon.icon.ion-ios-close:before{
+
+.filter-bar-clear.button.button-icon.icon.ion-ios-close:before {
     color: #fff !important;
 }
-.button.button-assertive.reset{
+
+.button.button-assertive.reset {
     float: right;
     margin-right: 20px;
     min-height: 35px;
     line-height: 35px;
 }
-.button.button-assertive.submit{
+
+.button.button-assertive.submit {
     float: right;
     min-height: 35px;
     line-height: 35px;
@@ -211,20 +251,25 @@ label.agreement.item.item-checkbox {
     border: none;
     box-shadow: none;
 }
+
 label.agreement.item.item-checkbox .checkbox {
     padding-left: 0;
 }
-label.agreement.item .checkbox-icon:before{
+
+label.agreement.item .checkbox-icon:before {
     border-radius: 0;
     border-color: #d66625;
     box-shadow: 1px 0px 5px 1px #ddd;
 }
+
 label.agreement.item .item-content.disable-pointer-events {
     margin-left: 46px;
 }
-label.agreement.item .item-content.disable-pointer-events span{
+
+label.agreement.item .item-content.disable-pointer-events span {
     color: #000;
     font-size: 14px;
 }
+
 
 /*.ion-search:before,*/

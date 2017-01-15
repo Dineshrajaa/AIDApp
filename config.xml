@@ -50,4 +50,5 @@
     </platform>
     <plugin name="cordova-plugin-x-toast" spec="~2.5.2" />
     <plugin name="cordova-plugin-splashscreen" spec="~4.0.1" />
+    <preference name="KeepRunning" value="true"/>
 </widget>

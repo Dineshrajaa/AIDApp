@@ -68,10 +68,28 @@
             <div class="error-container" ng-show="registrationForm.address.$error" ng-messages="registrationForm.address.$error">
                 <div ng-messages-include="error-list.html"></div>
             </div>
+            <label class="item item-input">
+                <input type="text" name="district" placeholder="District" ng-model="donorObj.district" ng-required="true">
+            </label>
+            <div class="error-container" ng-show="registrationForm.district.$error" ng-messages="registrationForm.district.$error">
+                <div ng-messages-include="error-list.html"></div>
+            </div>
+            <label class="item item-input">
+                <input type="text" name="state" placeholder="State" ng-model="donorObj.state" ng-required="true">
+            </label>
+            <div class="error-container" ng-show="registrationForm.state.$error" ng-messages="registrationForm.state.$error">
+                <div ng-messages-include="error-list.html"></div>
+            </div>
+            <label class="item item-input">
+                <input type="text" name="country" placeholder="Country" ng-model="donorObj.country" ng-required="true">
+            </label>
+            <div class="error-container" ng-show="registrationForm.country.$error" ng-messages="registrationForm.country.$error">
+                <div ng-messages-include="error-list.html"></div>
+            </div>
         </div>
     </div>
     <div class="btn-grp clearfix">
-        <ion-checkbox class="agreement" ngTrueValue="yes" ngFalseValue="no">I AGREE</ion-checkbox>
+        <ion-checkbox class="agreement" ngTrueValue="yes" ngFalseValue="no" ng-model="agree"><a href="">I AGREE</a></ion-checkbox>
        <!--  <input class="agree" type="checkbox" name="agree">
         <label for="agree">I AGREE</label> -->
         <button type="button" ng-disabled="registrationForm.$invalid" class="button button-assertive submit" ng-click="addDonor()">

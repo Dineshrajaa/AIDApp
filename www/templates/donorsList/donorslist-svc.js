@@ -25,6 +25,9 @@ angular.module('aid.services', [])
         formattedDonor.conditions.surgery = donorObj.surgery;
         formattedDonor.weight = donorObj.weight;
         formattedDonor.address = donorObj.address;
+        formattedDonor.district = donorObj.district;
+        formattedDonor.state = donorObj.state;
+        formattedDonor.country = donorObj.country;
         console.log("formattedDonor:" + angular.toJson(formattedDonor));
         return formattedDonor;
     }

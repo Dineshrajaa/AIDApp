@@ -10,6 +10,12 @@
     <ion-content overflow-scroll="true">
         <ion-refresher pulling-icon="ion-arrow-down-b" pulling-text="Pull to refresh..." on-refresh="fetchDonorsList()">
         </ion-refresher>
+        <center class="sortbuttons">
+            <a class="button" ng-click="setSortCriteria('bloodGroup')">Blood Group</a>
+            <a class="button" ng-click="setSortCriteria('district')">District</a>
+            <a class="button" ng-click="setSortCriteria('state')">State</a>
+            <a class="button" ng-click="setSortCriteria('country')">country</a>
+        </center>
         <div class="donorList">
             <!-- <label class="item item-input">
             <input type="text" placeholder="Country">
@@ -23,7 +29,7 @@
         <label class="item item-input">
             <input type="text" placeholder="Blood Group">
         </label> -->
-            <div class="card" ng-repeat="donor in fetchedDonors">
+            <div class="card" ng-repeat="donor in fetchedDonors | orderObjectBy : myOrder">
                 <div class="item item-text-wrap clearfix">
                     <h2>{{donor.fname}} {{donor.lname}}</h2>
                     <a href="tel:{{donor.pmobile}}" class="bloodgroup circle ion-iphone"></a>
@@ -52,7 +58,6 @@
                             <i ng-class="{'ion-checkmark-circled':donor.conditions.sugar,'ion-close-circled':donor.conditions.sugar==undefined}"></i>
                             <span class="">Sugar</span>
                         </div>
-                        
                         <div class="width-100">
                             <i ng-class="{'ion-checkmark-circled':donor.conditions.surgery,'ion-close-circled':donor.conditions.surgery==undefined}"></i>
                             <span class="">Surgery Undertaken</span>
@@ -72,7 +77,7 @@
                     </div>
                 </div>
             </div>
-<!--         <div class="card">
+            <!--         <div class="card">
             <div class="item item-text-wrap clearfix">
                 <h2>N.Jayaprakash</h2>
                 <a href="#" class="bloodgroup circle ion-iphone"></a>
@@ -120,6 +125,6 @@
         </div>
     </ion-content>
 </ion-view>
-<a ui-sref="registrationForm" class="addDonor">
+<!-- <a ui-sref="registrationForm" class="addDonor">
     <img src="./img/addDonor.png">
-</a>
+</a> -->
