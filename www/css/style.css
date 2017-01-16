@@ -69,7 +69,7 @@ h2 {
 }
 
 .donorList {
-    margin-top: 75px;
+    margin-top: 25px;
 }
 
 .bar-positive.bar.bar-header,
@@ -269,6 +269,12 @@ label.agreement.item .item-content.disable-pointer-events {
 label.agreement.item .item-content.disable-pointer-events span {
     color: #000;
     font-size: 14px;
+}
+.sortbuttons .button{
+    border-radius: 0;
+    padding: 0 10px;
+    text-transform: capitalize;
+    background: transparent;
 }
 
 
