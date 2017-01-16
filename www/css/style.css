@@ -147,6 +147,9 @@ h2 {
 .sortbuttons .button {
     border: 1px solid #d66625;
 }
+.bar.item-input-inset .item-input-wrapper input {
+    color: #fafafa;
+}
 
 .button.button-assertive {
     background-color: #d66625;
