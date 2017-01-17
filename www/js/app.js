@@ -3,10 +3,14 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('aid', ['ionic', 'ngMessages','ngOrderObjectBy', 'jett.ionic.filter.bar', 'aid.services', 'aid.controllers'])
+angular.module('aid', ['ionic', 'ngMessages', 'ngOrderObjectBy', 'jett.ionic.filter.bar', 'aid.services', 'aid.controllers'])
 
-.run(function($ionicPlatform,$state) {
+.run(function($ionicPlatform, $state) {
     $ionicPlatform.ready(function() {
+        navigator.splashscreen.show();
+        setTimeout(function() {
+            navigator.splashscreen.hide();
+        }, 3000);
         if (window.cordova && window.cordova.plugins.Keyboard) {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
@@ -21,10 +25,10 @@ angular.module('aid', ['ionic', 'ngMessages','ngOrderObjectBy', 'jett.ionic.filt
             StatusBar.styleDefault();
         }
 
-        if(typeof localStorage.firstRun== "undefined"){
+        if (typeof localStorage.firstRun == "undefined") {
             // App has been instantiated for the first time
             $state.go('register');
-        }else{
+        } else {
             // App has been already opened
             $state.go('donorslist');
         }
@@ -50,7 +54,7 @@ angular.module('aid', ['ionic', 'ngMessages','ngOrderObjectBy', 'jett.ionic.filt
             templateUrl: 'templates/donorsList/registrationForm.html',
             controller: 'AddDonorCtrl'
         })
-    // $urlRouterProvider.otherwise('/donorslist');
+        // $urlRouterProvider.otherwise('/donorslist');
 })
 
 
