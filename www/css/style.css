@@ -37,7 +37,7 @@
 .bloodgroup {
     border-radius: 50%;
     padding: 10px 5px;
-    background-color: #d66625;
+    background-color: #D66A50;
     color: #fff;
     position: absolute;
     right: 15px;
@@ -59,7 +59,7 @@
 .ion-home:before,
 .ion-iphone,
 h2 {
-    color: #d66625;
+    color: #D66A50;
 }
 
 .pane,
@@ -75,7 +75,7 @@ h2 {
 .bar-positive.bar.bar-header,
 .bar-positive .button,
 .bar-positive input {
-    background-color: #d66625 !important;
+    background-color: #D66A50 !important;
 }
 
 .donorList .card .item h2 {
@@ -145,24 +145,24 @@ h2 {
 }
 
 .sortbuttons .button {
-    border: 1px solid #d66625;
+    border: 1px solid #D66A50;
 }
 .bar.item-input-inset .item-input-wrapper input {
     color: #fafafa;
 }
 
 .button.button-assertive {
-    background-color: #d66625;
+    background-color: #D66A50;
 }
 
 .checkbox input:checked:before,
 .checkbox input:checked + .checkbox-icon:before {
-    background: #d66625;
-    border-color: #d66625;
+    background: #D66A50;
+    border-color: #D66A50;
 }
 
 .ion-checkmark:before {
-    color: #d66625;
+    color: #D66A50;
 }
 
 .circle {
@@ -188,12 +188,12 @@ h2 {
 .item-checkbox *,
 .item-radio *,
 input {
-    color: #d66625;
+    color: #D66A50;
 }
 
 .item-input input,
 .item-input textarea {
-    color: #d66625;
+    color: #D66A50;
     font-size: 16px;
 }
 
@@ -203,7 +203,8 @@ h3,
 }
 
 .registerBtn {
-    margin-top: 10px;
+    margin-top: 25%;
+    width: 50%;
 }
 
 .addDonor img {
@@ -221,13 +222,13 @@ h3,
 }
 
 .ion-search {
-    box-shadow: 0px 0px 2px 1px #d66625;
+    box-shadow: 0px 0px 2px 1px #D66A50;
 }
 
 .placeholder-icon,
 .button-clear.button-clear,
 .filter-bar .filter-bar-wrapper .item-input-inset .item-input-wrapper .filter-bar-clear.button:before {
-    color: #d66625;
+    color: #D66A50;
 }
 
 .filter-bar-clear.button.button-icon.icon.ion-ios-close:before {
@@ -261,7 +262,7 @@ label.agreement.item.item-checkbox .checkbox {
 
 label.agreement.item .checkbox-icon:before {
     border-radius: 0;
-    border-color: #d66625;
+    border-color: #D66A50;
     box-shadow: 1px 0px 5px 1px #ddd;
 }
 
