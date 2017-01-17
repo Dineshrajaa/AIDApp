@@ -42,10 +42,16 @@ angular.module('aid.controllers', ['aid.services'])
 .controller('AddDonorCtrl', function($scope, $state, DonorsSvc, GenericSvc) {
     // $scope.bloodList=[{bg:'A+'},{bg:'B+'},{bg:'AB+'},{bg:'O+'},{bg:'A-'},{bg:'B-'},{bg:'AB-'},{bg:'O-'}];
     $scope.bloodList=['A+','B+','AB+','O+','A-','B-','AB-','O-'];
+    $scope.validations={};
+    $scope.validations.textonly='^[a-zA-Z]+$';
     $scope.donorObj = {};
     $scope.donorObj.bloodGroup='A+';
     $scope.addDonor = function() {
         // Method to add donor
+        if(!$scope.donorObj.agree){
+           GenericSvc.showToast('Please agree our rules to register');
+           return;
+        }
         GenericSvc.showLoader('Adding Donor');
         DonorsSvc.storeDonor(DonorsSvc.buildDonorObj($scope.donorObj)).then(function(res) {
             localStorage.firstRun="false";

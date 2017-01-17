@@ -6,25 +6,25 @@
         <div class="list col">
             <h3>Personal Information:</h3>
             <label class="item item-input">
-                <input type="text" name="fname" placeholder="Name" ng-model="donorObj.fname" ng-required="true">
+                <input type="text" name="fname" placeholder="Name" ng-model="donorObj.fname" ng-required="true" ng-pattern="validations.textonly">
             </label>
             <div class="error-container" ng-show="registrationForm.fname.$error" ng-messages="registrationForm.fname.$error">
                 <div ng-messages-include="error-list.html"></div>
             </div>
             <label class="item item-input">
-                <input type="text" name="lname" placeholder="Last Name" ng-model="donorObj.lname" ng-required="true">
+                <input type="text" name="lname" placeholder="Last Name" ng-model="donorObj.lname" ng-required="true" ng-pattern="validations.textonly">
             </label>
             <div class="error-container" ng-show="registrationForm.lname.$error" ng-messages="registrationForm.lname.$error">
                 <div ng-messages-include="error-list.html"></div>
             </div>
             <label class="item item-input">
-                <input type="tel" name="pmobile" placeholder="Primary No." ng-model="donorObj.pmobile" ng-required="true">
+                <input type="tel" name="pmobile" placeholder="Primary No." ng-model="donorObj.pmobile" ng-required="true" ng-maxlength="10">
             </label>
             <div class="error-container" ng-show="registrationForm.pmobile.$error" ng-messages="registrationForm.pmobile.$error">
                 <div ng-messages-include="error-list.html"></div>
             </div>
             <label class="item item-input">
-                <input type="tel" placeholder="Secondary No." ng-model="donorObj.smobile">
+                <input type="tel" placeholder="Secondary No." ng-model="donorObj.smobile" ng-maxlength="10">
             </label>
             <!-- <label class="item item-input">
                 <input type="text" name="bloodGroup" placeholder="Blood Group" ng-model="donorObj.bloodGroup" ng-required="true">
@@ -40,7 +40,7 @@
                 <div ng-messages-include="error-list.html"></div>
             </div> -->
             <label class="item item-input">
-                <input type="text" name="age" placeholder="Age" ng-model="donorObj.age" ng-required="true">
+                <input type="tel" name="age" placeholder="Age" ng-model="donorObj.age" ng-required="true">
             </label>
             <div class="error-container" ng-show="registrationForm.age.$error" ng-messages="registrationForm.age.$error">
                 <div ng-messages-include="error-list.html"></div>
@@ -56,7 +56,7 @@
             <ion-checkbox ng-model="donorObj.sugar" ngTrueValue="yes" ngFalseValue="no">Sugar</ion-checkbox>
             <ion-checkbox ng-model="donorObj.surgery" ngTrueValue="yes" ngFalseValue="no">Under take Surgery</ion-checkbox>
             <label class="item item-input">
-                <input type="text" name="weight" placeholder="Weight" ng-model="donorObj.weight" ng-required="true">
+                <input type="number" name="weight" placeholder="Weight" ng-model="donorObj.weight" ng-required="true">
             </label>
             <div class="error-container" ng-show="registrationForm.weight.$error" ng-messages="registrationForm.weight.$error">
                 <div ng-messages-include="error-list.html"></div>
@@ -69,19 +69,19 @@
                 <div ng-messages-include="error-list.html"></div>
             </div>
             <label class="item item-input">
-                <input type="text" name="district" placeholder="District" ng-model="donorObj.district" ng-required="true">
+                <input type="text" name="district" placeholder="District" ng-model="donorObj.district" ng-required="true" ng-pattern="validations.textonly">
             </label>
             <div class="error-container" ng-show="registrationForm.district.$error" ng-messages="registrationForm.district.$error">
                 <div ng-messages-include="error-list.html"></div>
             </div>
             <label class="item item-input">
-                <input type="text" name="state" placeholder="State" ng-model="donorObj.state" ng-required="true">
+                <input type="text" name="state" placeholder="State" ng-model="donorObj.state" ng-required="true" ng-pattern="validations.textonly">
             </label>
             <div class="error-container" ng-show="registrationForm.state.$error" ng-messages="registrationForm.state.$error">
                 <div ng-messages-include="error-list.html"></div>
             </div>
             <label class="item item-input">
-                <input type="text" name="country" placeholder="Country" ng-model="donorObj.country" ng-required="true">
+                <input type="text" name="country" placeholder="Country" ng-model="donorObj.country" ng-required="true" ng-pattern="validations.textonly">
             </label>
             <div class="error-container" ng-show="registrationForm.country.$error" ng-messages="registrationForm.country.$error">
                 <div ng-messages-include="error-list.html"></div>
@@ -89,7 +89,7 @@
         </div>
     </div>
     <div class="btn-grp clearfix">
-        <ion-checkbox class="agreement" ngTrueValue="yes" ngFalseValue="no" ng-model="agree"><a href="">I AGREE</a></ion-checkbox>
+        <ion-checkbox class="agreement" ngTrueValue="yes" ngFalseValue="no" ng-model="donorObj.agree"><a href="">I AGREE</a></ion-checkbox>
        <!--  <input class="agree" type="checkbox" name="agree">
         <label for="agree">I AGREE</label> -->
         <button type="button" ng-disabled="registrationForm.$invalid" class="button button-assertive submit" ng-click="addDonor()">
@@ -104,10 +104,13 @@
     <div class="error" ng-message="required">
         <i class="ion-information-circled"></i> This field is required!
     </div>
+    <div class="error" ng-message="pattern">
+        <i class="ion-information-circled"></i> Only Alphabets allowed!
+    </div>
     <div class="error" ng-message="minlength">
         <i class="ion-information-circled"></i> Minimum length of this field is 5 characters!
     </div>
     <div class="error" ng-message="maxlength">
-        <i class="ion-information-circled"></i> Maximum length of this field is 20 characters!
+        <i class="ion-information-circled"></i> Maximum length of this field is 10 characters!
     </div>
 </script>
