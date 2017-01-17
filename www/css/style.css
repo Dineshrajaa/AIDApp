@@ -7,11 +7,11 @@
 }
 
 .register {
-    background: url(../img/background.jpg);
+    background: url(../img/background-new.jpg);
     height: 100%;
     background-position: center;
-    background-size: cover;
-    background-repeat: none;
+    background-size: contain;
+    background-repeat: no-repeat;
     text-align: center;
 }
 
@@ -278,6 +278,9 @@ label.agreement.item .item-content.disable-pointer-events span {
     padding: 0 10px;
     text-transform: capitalize;
     background: transparent;
+}
+.filter-bar .filter-bar-wrapper .item-input-inset .item-input-wrapper {
+    background: #fff !important;
 }
 
 
