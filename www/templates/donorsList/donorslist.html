@@ -11,7 +11,11 @@
         <ion-refresher pulling-icon="ion-arrow-down-b" pulling-text="Pull to refresh..." on-refresh="fetchDonorsList()">
         </ion-refresher>
         <center class="sortbuttons">
-            <a class="button" ng-click="setSortCriteria('bloodGroup')">Blood Group</a>
+            <a class="button" modal-select ng-model="selectedBlood" options="bloodList" modal-title="Select a blood group" has-search="true">Blood Group
+            <div class="option">
+              {{option}}
+            </div>
+            </a>
             <a class="button" ng-click="setSortCriteria('district')">District</a>
             <a class="button" ng-click="setSortCriteria('state')">State</a>
             <a class="button" ng-click="setSortCriteria('country')">country</a>
@@ -29,7 +33,7 @@
         <label class="item item-input">
             <input type="text" placeholder="Blood Group">
         </label> -->
-            <div class="card" ng-repeat="donor in fetchedDonors | orderObjectBy : myOrder">
+            <div class="card" ng-repeat="donor in fetchedDonors | orderObjectBy : myOrder|filter:{donor.bloodGroup:selectedBlood}">
                 <div class="item item-text-wrap clearfix">
                     <h2>{{donor.fname}} {{donor.lname}}</h2>
                     <a href="tel:{{donor.pmobile}}" class="bloodgroup circle ion-iphone"></a>
