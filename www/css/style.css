@@ -73,6 +73,7 @@ h2 {
 }
 
 .bar-positive.bar.bar-header,
+.bar-positive.bar.bar-footer,
 .bar-positive .button,
 .bar-positive input {
     background-color: #D66A50 !important;
