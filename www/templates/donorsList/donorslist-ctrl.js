@@ -67,6 +67,19 @@ angular.module('aid.controllers', ['aid.services'])
         // Method to reset the add donor form
         $scope.donorObj = {};
     };
+    $scope.fetchStates=function(){
+        // Method to get the list of Indian states
+        GenericSvc.showLoader('Processing form');
+        GenericSvc.getStateList().then(function(res){
+            $scope.statesList=res.data.Data;
+            console.warn($scope.statesList);
+        },function(err) {
+            GenericSvc.showToast('Unable to get states');
+        }).finally(function() {
+            GenericSvc.hideLoader();
+        });
+    }
+    $scope.fetchStates();
 })
 
 .controller('InitialCtrl', function($scope) {

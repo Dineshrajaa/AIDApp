@@ -68,18 +68,26 @@
             <div class="error-container" ng-show="registrationForm.address.$error" ng-messages="registrationForm.address.$error">
                 <div ng-messages-include="error-list.html"></div>
             </div>
+            <!-- <label class="item item-input">
+                <input type="text" name="state" placeholder="State" ng-model="donorObj.state" ng-required="true" ng-pattern="validations.textonly">
+            </label> -->
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    State
+                </div>
+                <select ng-options="state.ID as state.Name for state in statesList track by state.ID" ng-model="donorObj.state">                 
+                </select>
+            </label>
+            <div class="error-container" ng-show="registrationForm.state.$error" ng-messages="registrationForm.state.$error">
+                <div ng-messages-include="error-list.html"></div>
+            </div>
             <label class="item item-input">
                 <input type="text" name="district" placeholder="District" ng-model="donorObj.district" ng-required="true" ng-pattern="validations.textonly">
             </label>
             <div class="error-container" ng-show="registrationForm.district.$error" ng-messages="registrationForm.district.$error">
                 <div ng-messages-include="error-list.html"></div>
             </div>
-            <label class="item item-input">
-                <input type="text" name="state" placeholder="State" ng-model="donorObj.state" ng-required="true" ng-pattern="validations.textonly">
-            </label>
-            <div class="error-container" ng-show="registrationForm.state.$error" ng-messages="registrationForm.state.$error">
-                <div ng-messages-include="error-list.html"></div>
-            </div>
+            
             <label class="item item-input">
                 <input type="text" name="country" placeholder="Country" ng-model="donorObj.country" ng-required="true" ng-pattern="validations.textonly">
             </label>

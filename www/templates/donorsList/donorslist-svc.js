@@ -33,7 +33,7 @@ angular.module('aid.services', [])
     }
 })
 
-.service('GenericSvc', function($ionicLoading) {
+.service('GenericSvc', function($ionicLoading,$http) {
     this.showLoader = function(msg) {
         /*Show loader*/
         $ionicLoading.show({
@@ -60,5 +60,11 @@ angular.module('aid.services', [])
                 textColor: '#FFFFFF'
             }
         });
+    }
+
+    this.getStateList=function(){
+        /*To get the list of Indian states*/
+        return $http.get("https://www.whizapi.com/api/v2/util/ui/in/indian-states-list?project-app-key=58xah1b6ksiuys5p12xr9sjl");
+        
     }
 })
