@@ -33,7 +33,7 @@
                 <div class="input-label">
                     Blood Group
                 </div>
-                <select ng-options="blood as blood for blood in bloodList" ng-model="donorObj.bloodGroup">                    
+                <select ng-options="blood as blood for blood in bloodList" ng-model="donorObj.bloodGroup">
                 </select>
             </label>
             <!-- <div class="error-container" ng-show="registrationForm.bloodGroup.$error" ng-messages="registrationForm.bloodGroup.$error">
@@ -75,19 +75,27 @@
                 <div class="input-label">
                     State
                 </div>
-                <select ng-options="state.ID as state.Name for state in statesList track by state.ID" ng-model="donorObj.state">                 
+                <select name="state" ng-options="state.ID as state.Name for state in statesList track by state.ID" ng-model="donorObj.state" ng-change="fetchDistricts()">
+                    <option value="">Select</option>
                 </select>
             </label>
             <div class="error-container" ng-show="registrationForm.state.$error" ng-messages="registrationForm.state.$error">
                 <div ng-messages-include="error-list.html"></div>
             </div>
-            <label class="item item-input">
+            <!-- <label class="item item-input">
                 <input type="text" name="district" placeholder="District" ng-model="donorObj.district" ng-required="true" ng-pattern="validations.textonly">
+            </label> -->
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    District
+                </div>
+                <select name="district" ng-options="district.city as district.city for district in districtsList track by district.city" ng-model="donorObj.district">
+                    <option value="">Select</option>
+                </select>
             </label>
             <div class="error-container" ng-show="registrationForm.district.$error" ng-messages="registrationForm.district.$error">
                 <div ng-messages-include="error-list.html"></div>
             </div>
-            
             <label class="item item-input">
                 <input type="text" name="country" placeholder="Country" ng-model="donorObj.country" ng-required="true" ng-pattern="validations.textonly">
             </label>
@@ -98,7 +106,7 @@
     </div>
     <div class="btn-grp clearfix">
         <ion-checkbox class="agreement" ngTrueValue="yes" ngFalseValue="no" ng-model="donorObj.agree"><a href="">I AGREE</a></ion-checkbox>
-       <!--  <input class="agree" type="checkbox" name="agree">
+        <!--  <input class="agree" type="checkbox" name="agree">
         <label for="agree">I AGREE</label> -->
         <button type="button" ng-disabled="registrationForm.$invalid" class="button button-assertive submit" ng-click="addDonor()">
             Submit

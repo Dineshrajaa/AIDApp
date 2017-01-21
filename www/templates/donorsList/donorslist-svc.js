@@ -67,4 +67,8 @@ angular.module('aid.services', [])
         return $http.get("https://www.whizapi.com/api/v2/util/ui/in/indian-states-list?project-app-key=58xah1b6ksiuys5p12xr9sjl");
         
     }
+    this.getDistrictList=function(stateId){
+        /*To get the list of Districts of the selected State*/
+        return $http.get("https://www.whizapi.com/api/v2/util/ui/in/indian-city-by-state?stateid="+stateId+"&project-app-key=58xah1b6ksiuys5p12xr9sjl");
+    }
 })
