@@ -11,12 +11,12 @@
         <ion-refresher pulling-icon="ion-arrow-down-b" pulling-text="Pull to refresh..." on-refresh="fetchDonorsList()">
         </ion-refresher>
         <center class="sortbuttons">
-            <a class="button" modal-select ng-model="selectedBlood" options="bloodList" modal-title="Select a blood group" has-search="true" header-footer-class="bar-positive" on-select="getSelectedBloodGroup(newValue,oldValue)">Blood Group
+            <a class="button" modal-select ng-model="selectedBlood" options="bloodList" modal-title="Select a blood group" has-search="true" header-footer-class="bar-positive" on-select="getSelectedBloodGroup(newValue,oldValue)" on-reset="resetFilter('blood')">Blood Group
             <div class="option">
               {{option}}
             </div>
             </a>
-            <a class="button" modal-select ng-model="selectedState" options="statesList" modal-title="Select your State" has-search="true" on-select="getSelectedState(newValue, oldValue)" header-footer-class="bar-positive">State
+            <a class="button" modal-select ng-model="selectedState" options="statesList" modal-title="Select your State" has-search="true" on-select="getSelectedState(newValue, oldValue)" on-reset="resetFilter('state')" header-footer-class="bar-positive">State
             <div class="option">
               {{option.Name}}
             </div>

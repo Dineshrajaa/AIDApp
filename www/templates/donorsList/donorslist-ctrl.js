@@ -3,6 +3,7 @@ angular.module('aid.controllers', ['aid.services'])
 .controller('DonorListCtrl', function($scope, $ionicFilterBar, DonorsSvc, GenericSvc) {
     $scope.myOrder = 'weight';
     $scope.myFilter={};
+    $scope.myFilter.district=$scope.selectedDistrict;
     $scope.bloodList = ['A+', 'B+', 'AB+', 'O+', 'A-', 'B-', 'AB-', 'O-'];
     $scope.fetchStates = function() {
         // Method to get the list of Indian states
@@ -16,6 +17,7 @@ angular.module('aid.controllers', ['aid.services'])
             GenericSvc.hideLoader();
         });
     };
+
     $scope.fetchDistricts = function(selectedState) {
         // Method to get the list of Districts from the selected state
         GenericSvc.showLoader('Fetching Cities');
@@ -28,6 +30,18 @@ angular.module('aid.controllers', ['aid.services'])
             GenericSvc.hideLoader();
         });
     };
+    $scope.resetFilter=function(filterName){
+        // Method to reset the filter
+        switch(filterName){
+            case 'blood':
+                $scope.myFilter.bloodGroup="";
+                break;
+            case 'state':
+                $scope.myFilter.state="";
+                break;
+
+        }
+    };
     $scope.getSelectedState=function(newValue){
         // Method to get the selected state
         $scope.myFilter.state=newValue.Name;
@@ -36,7 +50,6 @@ angular.module('aid.controllers', ['aid.services'])
     };
     $scope.getSelectedBloodGroup=function(newValue){
         // Method to get the selected blood group
-        console.log("Blood:"+newValue);
         $scope.myFilter.bloodGroup=newValue;
     };
     $scope.fetchDonorsList = function() {
