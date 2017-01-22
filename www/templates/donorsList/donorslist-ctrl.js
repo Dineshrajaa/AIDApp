@@ -2,18 +2,56 @@ angular.module('aid.controllers', ['aid.services'])
 
 .controller('DonorListCtrl', function($scope, $ionicFilterBar, DonorsSvc, GenericSvc) {
     $scope.myOrder = 'weight';
+    $scope.myFilter={};
     $scope.bloodList = ['A+', 'B+', 'AB+', 'O+', 'A-', 'B-', 'AB-', 'O-'];
+    $scope.fetchStates = function() {
+        // Method to get the list of Indian states
+        GenericSvc.showLoader('Processing form');
+        GenericSvc.getStateList().then(function(res) {
+            $scope.statesList = res.data.Data;
+            console.warn($scope.statesList);
+        }, function(err) {
+            GenericSvc.showToast('Unable to get states');
+        }).finally(function() {
+            GenericSvc.hideLoader();
+        });
+    };
+    $scope.fetchDistricts = function(selectedState) {
+        // Method to get the list of Districts from the selected state
+        GenericSvc.showLoader('Fetching Cities');
+        GenericSvc.getDistrictList(selectedState).then(function(res) {
+            $scope.districtsList = res.data.Data;
+            console.warn($scope.districtsList);
+        }, function(err) {
+            GenericSvc.showToast('Unable to get cities');
+        }).finally(function() {
+            GenericSvc.hideLoader();
+        });
+    };
+    $scope.getSelectedState=function(newValue){
+        // Method to get the selected state
+        $scope.myFilter.state=newValue.Name;
+        console.warn($scope.myFilter.state);
+        $scope.fetchDistricts(newValue.ID);
+    };
+    $scope.getSelectedBloodGroup=function(newValue){
+        // Method to get the selected blood group
+        console.log("Blood:"+newValue);
+        $scope.myFilter.bloodGroup=newValue;
+    };
     $scope.fetchDonorsList = function() {
         // Method to get the list of donors
         GenericSvc.showLoader('Fetching Donors');
         DonorsSvc.getDonorsList().then(function(res) {
             $scope.fetchedDonors = res.data;
+            console.warn($scope.fetchedDonors);
         }, function(err) {
             GenericSvc.showToast('Unable to fetch Donors list');
         }).finally(function() {
             // Stop the ion-refresher from spinning
             $scope.$broadcast('scroll.refreshComplete');
             GenericSvc.hideLoader();
+            $scope.fetchStates();
         });
     };
 
@@ -32,11 +70,7 @@ angular.module('aid.controllers', ['aid.services'])
             }
         });
     };
-    /*$scope.$on("$ionicView.enter", function(event, data) {
-        // handle event
-        console.warn("View entered");
-        
-    });*/
+    
     $scope.fetchDonorsList();
 })
 
@@ -79,12 +113,21 @@ angular.module('aid.controllers', ['aid.services'])
             GenericSvc.hideLoader();
         });
     };
+    $scope.findSelectedName=function(stateID){
+        // Method to find selected name
+        angular.forEach($scope.statesList,function(value,key){
+            // console.warn("Value.ID:"+value.ID+"Value.Name:"+value.Name);
+            if(value.ID==stateID){
+                $scope.donorObj.stateName=value.Name;
+            }
+        })
+    };
     $scope.fetchDistricts = function() {
         // Method to get the list of Districts from the selected state
+        $scope.findSelectedName($scope.donorObj.state);
         GenericSvc.showLoader('Fetching Cities');
         GenericSvc.getDistrictList($scope.donorObj.state).then(function(res) {
             $scope.districtsList = res.data.Data;
-            $scope.district="Coimbatore";
             console.warn($scope.districtsList);
         }, function(err) {
             GenericSvc.showToast('Unable to get cities');
@@ -92,6 +135,7 @@ angular.module('aid.controllers', ['aid.services'])
             GenericSvc.hideLoader();
         });
     };
+
     $scope.fetchStates();
 })
 

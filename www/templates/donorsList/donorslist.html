@@ -11,14 +11,24 @@
         <ion-refresher pulling-icon="ion-arrow-down-b" pulling-text="Pull to refresh..." on-refresh="fetchDonorsList()">
         </ion-refresher>
         <center class="sortbuttons">
-            <a class="button" modal-select ng-model="selectedBlood" options="bloodList" modal-title="Select a blood group" has-search="true" header-footer-class="bar-positive">Blood Group
+            <a class="button" modal-select ng-model="selectedBlood" options="bloodList" modal-title="Select a blood group" has-search="true" header-footer-class="bar-positive" on-select="getSelectedBloodGroup(newValue,oldValue)">Blood Group
             <div class="option">
               {{option}}
             </div>
             </a>
-            <a class="button" ng-click="setSortCriteria('district')">District</a>
+            <a class="button" modal-select ng-model="selectedState" options="statesList" modal-title="Select your State" has-search="true" on-select="getSelectedState(newValue, oldValue)" header-footer-class="bar-positive">State
+            <div class="option">
+              {{option.Name}}
+            </div>
+            </a>
+            <a class="button" modal-select ng-model="selectedDistrict" options="districtsList" modal-title="Select your District" has-search="true" header-footer-class="bar-positive" option-property="city" ng-disabled="!selectedState">District
+            <div class="option">
+              {{option.city}}
+            </div>
+            </a>
+            <!-- <a class="button" ng-click="setSortCriteria('district')">District</a>
             <a class="button" ng-click="setSortCriteria('state')">State</a>
-            <a class="button" ng-click="setSortCriteria('country')">country</a>
+            <a class="button" ng-click="setSortCriteria('country')">country</a> -->
         </center>
         <div class="donorList">
             <!-- <label class="item item-input">
@@ -33,7 +43,7 @@
         <label class="item item-input">
             <input type="text" placeholder="Blood Group">
         </label> -->
-            <div class="card" ng-repeat="donor in fetchedDonors | orderObjectBy : myOrder|filter:{bloodGroup:selectedBlood}">
+            <div class="card" ng-repeat="donor in fetchedDonors |filter:myFilter">
                 <div class="item item-text-wrap clearfix">
                     <h2>{{donor.fname}} {{donor.lname}}</h2>
                     <a href="tel:{{donor.pmobile}}" class="bloodgroup circle ion-iphone"></a>
