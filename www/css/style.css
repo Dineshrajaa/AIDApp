@@ -290,7 +290,7 @@ label.agreement.item .item-content.disable-pointer-events span {
     background: transparent;
 }
 .filter-bar .filter-bar-wrapper .item-input-inset .item-input-wrapper {
-    background: #fff !important;
+    background: transparent !important;
 }
 
 

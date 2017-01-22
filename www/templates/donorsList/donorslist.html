@@ -45,7 +45,7 @@
         </label> -->
             <div class="card" ng-repeat="donor in fetchedDonors |filter:myFilter">
                 <div class="item item-text-wrap clearfix">
-                    <h2>{{donor.fname}} {{donor.lname}}</h2>
+                    <h2>{{donor.fname}} {{donor.lname}}({{donor.age}})</h2>
                     <a href="tel:{{donor.pmobile}}" class="bloodgroup circle ion-iphone"></a>
                     <a href="" class="bloodgroup type">{{donor.bloodGroup}}</a>
                     <div class="accordion-content clearfix">
