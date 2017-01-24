@@ -240,6 +240,7 @@ h3,
     /*color: #D66A50;*/
 }
 
+
 .filter-bar-clear.button.button-icon.icon.ion-ios-close:before {
     color: #fff !important;
 }
@@ -300,5 +301,8 @@ label.agreement.item .item-content.disable-pointer-events span {
     background: transparent !important;
 }
 
+.error-box{
+    box-shadow: 1px 0px 5px 1px #D66A50;
+}
 
 /*.ion-search:before,*/
