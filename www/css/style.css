@@ -147,6 +147,13 @@ h2 {
 
 .sortbuttons .button {
     border: 1px solid #D66A50;
+    margin: 5px 1%;
+    min-height: 22px;
+    width: 28%;
+    line-height: 30px;
+    padding: 0 2.5% !important;
+    text-align: left;
+    min-width: 114px;
 }
 
 .bar.item-input-inset .item-input-wrapper input {
