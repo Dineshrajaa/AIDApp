@@ -305,4 +305,9 @@ label.agreement.item .item-content.disable-pointer-events span {
     box-shadow: 1px 0px 5px 1px #D66A50;
 }
 
+.age {
+    font-size: 14px;
+    line-height: 19px;
+}
+
 /*.ion-search:before,*/
