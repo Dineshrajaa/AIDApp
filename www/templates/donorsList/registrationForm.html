@@ -5,7 +5,7 @@
     <div class="row">
         <div class="list col">
             <h3>Personal Information:</h3>
-            <label class="item item-input">
+            <label class="item item-input" ng-class="{'error-box':registrationForm.fname.$error}">
                 <input type="text" name="fname" placeholder="Name" ng-model="donorObj.fname" ng-required="true" ng-pattern="validations.textonly">
             </label>
             <div class="error-container" ng-show="registrationForm.fname.$error" ng-messages="registrationForm.fname.$error">
@@ -17,7 +17,7 @@
             <div class="error-container" ng-show="registrationForm.lname.$error" ng-messages="registrationForm.lname.$error">
                 <div ng-messages-include="error-list.html"></div>
             </div>
-            <label class="item item-input">
+            <label class="item item-input" ng-class="{'error-box':registrationForm.pmobile.$error}">
                 <input type="tel" name="pmobile" placeholder="Primary No." ng-model="donorObj.pmobile" ng-required="true" ng-maxlength="10">
             </label>
             <div class="error-container" ng-show="registrationForm.pmobile.$error" ng-messages="registrationForm.pmobile.$error">
@@ -39,7 +39,7 @@
             <!-- <div class="error-container" ng-show="registrationForm.bloodGroup.$error" ng-messages="registrationForm.bloodGroup.$error">
                 <div ng-messages-include="error-list.html"></div>
             </div> -->
-            <label class="item item-input">
+            <label class="item item-input" ng-class="{'error-box':registrationForm.age.$error}">
                 <input type="tel" name="age" placeholder="Age" ng-model="donorObj.age" ng-required="true">
             </label>
             <div class="error-container" ng-show="registrationForm.age.$error" ng-messages="registrationForm.age.$error">
@@ -55,14 +55,14 @@
             <ion-checkbox ng-model="donorObj.bp" ngTrueValue="yes" ngFalseValue="no">Blood Pressure</ion-checkbox>
             <ion-checkbox ng-model="donorObj.sugar" ngTrueValue="yes" ngFalseValue="no">Sugar</ion-checkbox>
             <ion-checkbox ng-model="donorObj.surgery" ngTrueValue="yes" ngFalseValue="no">Under take Surgery</ion-checkbox>
-            <label class="item item-input">
+            <label class="item item-input" ng-class="{'error-box':registrationForm.weight.$error}">
                 <input type="number" name="weight" placeholder="Weight" ng-model="donorObj.weight" ng-required="true">
             </label>
             <div class="error-container" ng-show="registrationForm.weight.$error" ng-messages="registrationForm.weight.$error">
                 <div ng-messages-include="error-list.html"></div>
             </div>
             <h3>Address:</h3>
-            <label class="item item-input">
+            <label class="item item-input" ng-class="{'error-box':registrationForm.address.$error}">
                 <textarea cols='5' rows='5' name="address" type="text" placeholder="Address" ng-model="donorObj.address" ng-required="true"></textarea>
             </label>
             <div class="error-container" ng-show="registrationForm.address.$error" ng-messages="registrationForm.address.$error">
@@ -71,7 +71,7 @@
             <!-- <label class="item item-input">
                 <input type="text" name="state" placeholder="State" ng-model="donorObj.state" ng-required="true" ng-pattern="validations.textonly">
             </label> -->
-            <label class="item item-input item-select">
+            <label class="item item-input item-select" ng-class="{'error-box':registrationForm.state.$error}">
                 <div class="input-label">
                     State
                 </div>
@@ -85,7 +85,7 @@
             <!-- <label class="item item-input">
                 <input type="text" name="district" placeholder="District" ng-model="donorObj.district" ng-required="true" ng-pattern="validations.textonly">
             </label> -->
-            <label class="item item-input item-select">
+            <label class="item item-input item-select" ng-class="{'error-box':registrationForm.district.$error}">
                 <div class="input-label">
                     District
                 </div>
@@ -96,7 +96,7 @@
             <div class="error-container" ng-show="registrationForm.district.$error" ng-messages="registrationForm.district.$error">
                 <div ng-messages-include="error-list.html"></div>
             </div>
-            <label class="item item-input">
+            <label class="item item-input" ng-class="{'error-box':registrationForm.country.$error}">
                 <input type="text" name="country" placeholder="Country" ng-model="donorObj.country" ng-required="true" ng-pattern="validations.textonly">
             </label>
             <div class="error-container" ng-show="registrationForm.country.$error" ng-messages="registrationForm.country.$error">

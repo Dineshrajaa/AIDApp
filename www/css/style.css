@@ -147,7 +147,7 @@ h2 {
 
 .sortbuttons .button {
     border: 1px solid #D66A50;
-    margin: 5px 1%;
+    margin: 5px 1px;
     min-height: 22px;
     width: 28%;
     line-height: 30px;
@@ -306,7 +306,7 @@ label.agreement.item .item-content.disable-pointer-events span {
 }
 
 .age {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 19px;
 }
 
