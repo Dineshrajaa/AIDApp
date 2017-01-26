@@ -22,7 +22,7 @@
               {{option.Name}}
             </div>
             </a>
-            <a class="button icon-right ion-arrow-down-b" modal-select ng-model="selectedDistrict" options="districtsList" modal-title="Select your District" has-search="true" header-footer-class="bar-positive" option-property="city" ng-disabled="!selectedState" style="margin-left: 0;">District
+            <a class="button icon-right ion-arrow-down-b" modal-select ng-model="selectedDistrict" options="districtsList" on-select="getSelectedDistrict(newValue, oldValue)" on-reset="resetFilter('district')" modal-title="Select your District" has-search="true" header-footer-class="bar-positive" option-property="city" ng-disabled="!selectedState" style="margin-left: 0;">District
             <div class="option">
               {{option.city}}
             </div>
@@ -31,6 +31,13 @@
             <a class="button" ng-click="setSortCriteria('state')">State</a>
             <a class="button" ng-click="setSortCriteria('country')">country</a> -->
         </div>
+        <br>
+        <span class="filteredtext" ng-if="filtered">
+        Found <b>{{filtered.length}}</b> 
+        <span ng-if="myFilter.bloodGroup"> <b>{{myFilter.bloodGroup}}</b></span>
+        <span> donors</span>
+        <span ng-if="myFilter.district"> in {{myFilter.district}}</span>
+        </span>
         <div class="donorList">
             <!-- <label class="item item-input">
             <input type="text" placeholder="Country">
@@ -44,7 +51,7 @@
         <label class="item item-input">
             <input type="text" placeholder="Blood Group">
         </label> -->
-            <div class="card" ng-repeat="donor in fetchedDonors |filter:myFilter">
+            <div class="card" ng-repeat="donor in fetchedDonors |filter:myFilter as filtered">
                 <div class="item item-text-wrap clearfix">
                     <h2>{{donor.fname}} {{donor.lname}}<span class="age">({{donor.age}})</span></h2>
                     <a href="tel:{{donor.pmobile}}" class="bloodgroup circle ion-iphone"></a>

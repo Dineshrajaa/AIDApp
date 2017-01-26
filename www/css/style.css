@@ -312,4 +312,10 @@ label.agreement.item .item-content.disable-pointer-events span {
     line-height: 19px;
 }
 
+.filteredtext{
+    color: #D66A50;
+    font-size: 18px;
+    margin:5%;
+}
+
 /*.ion-search:before,*/

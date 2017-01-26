@@ -3,7 +3,7 @@ angular.module('aid.controllers', ['aid.services'])
 .controller('DonorListCtrl', function($scope, $ionicFilterBar, DonorsSvc, GenericSvc) {
     $scope.myOrder = 'weight';
     $scope.myFilter={};
-    $scope.myFilter.district=$scope.selectedDistrict;
+    // $scope.myFilter.district=$scope.selectedDistrict;
     $scope.bloodList = ['A+', 'B+', 'AB+', 'O+', 'A-', 'B-', 'AB-', 'O-'];
     $scope.fetchStates = function() {
         // Method to get the list of Indian states
@@ -40,6 +40,9 @@ angular.module('aid.controllers', ['aid.services'])
             case 'state':
                 $scope.myFilter.state="";
                 break;
+            case 'district':
+                $scope.myFilter.district="";
+                break;
 
         }
     };
@@ -48,6 +51,12 @@ angular.module('aid.controllers', ['aid.services'])
         $scope.myFilter.state=newValue.Name;
         console.warn($scope.myFilter.state);
         $scope.fetchDistricts(newValue.ID);
+    };
+    $scope.getSelectedDistrict=function(newValue){
+        // Method to get the selected district
+        console.warn(newValue);
+        $scope.myFilter.district=newValue;
+        console.warn($scope.myFilter);
     };
     $scope.getSelectedBloodGroup=function(newValue){
         // Method to get the selected blood group
