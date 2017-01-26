@@ -18,13 +18,13 @@
                 <div ng-messages-include="error-list.html"></div>
             </div>
             <label class="item item-input" ng-class="{'error-box':registrationForm.pmobile.$error}">
-                <input type="tel" name="pmobile" placeholder="Primary No." ng-model="donorObj.pmobile" ng-required="true" ng-maxlength="10">
+                <input type="tel" name="pmobile" placeholder="Primary Phone No." ng-model="donorObj.pmobile" ng-required="true" ng-maxlength="10" no-special-char>
             </label>
             <div class="error-container" ng-show="registrationForm.pmobile.$error" ng-messages="registrationForm.pmobile.$error">
                 <div ng-messages-include="error-list.html"></div>
             </div>
             <label class="item item-input">
-                <input type="tel" placeholder="Secondary No." ng-model="donorObj.smobile" ng-maxlength="10">
+                <input type="tel" placeholder="Secondary Phone No." ng-model="donorObj.smobile" ng-maxlength="10" no-special-char>
             </label>
             <!-- <label class="item item-input">
                 <input type="text" name="bloodGroup" placeholder="Blood Group" ng-model="donorObj.bloodGroup" ng-required="true">
@@ -96,12 +96,12 @@
             <div class="error-container" ng-show="registrationForm.district.$error" ng-messages="registrationForm.district.$error">
                 <div ng-messages-include="error-list.html"></div>
             </div>
-            <label class="item item-input" ng-class="{'error-box':registrationForm.country.$error}">
+            <!-- <label class="item item-input" ng-class="{'error-box':registrationForm.country.$error}">
                 <input type="text" name="country" placeholder="Country" ng-model="donorObj.country" ng-required="true" ng-pattern="validations.textonly">
             </label>
             <div class="error-container" ng-show="registrationForm.country.$error" ng-messages="registrationForm.country.$error">
                 <div ng-messages-include="error-list.html"></div>
-            </div>
+            </div> -->
         </div>
     </div>
     <div class="btn-grp clearfix">

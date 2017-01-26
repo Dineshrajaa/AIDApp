@@ -11,17 +11,17 @@
         <ion-refresher pulling-icon="ion-arrow-down-b" pulling-text="Pull to refresh..." on-refresh="fetchDonorsList()">
         </ion-refresher>
         <div class="sortbuttons">
-            <a class="button" modal-select ng-model="selectedBlood" options="bloodList" modal-title="Select a blood group" has-search="true" header-footer-class="bar-positive" on-select="getSelectedBloodGroup(newValue,oldValue)" on-reset="resetFilter('blood')" style="margin-left: 4px;">Blood Group
+            <a class="button icon-right ion-arrow-down-b" modal-select ng-model="selectedBlood" options="bloodList" modal-title="Select a blood group" has-search="true" header-footer-class="bar-positive" on-select="getSelectedBloodGroup(newValue,oldValue)" on-reset="resetFilter('blood')" style="margin-left: 4px;">Blood
             <div class="option">
               {{option}}
             </div>
             </a>
-            <a class="button" modal-select ng-model="selectedState" options="statesList" modal-title="Select your State" has-search="true" on-select="getSelectedState(newValue, oldValue)" on-reset="resetFilter('state')" header-footer-class="bar-positive">State
+            <a class="button icon-right ion-arrow-down-b" modal-select ng-model="selectedState" options="statesList" modal-title="Select your State" has-search="true" on-select="getSelectedState(newValue, oldValue)" on-reset="resetFilter('state')" header-footer-class="bar-positive">State
             <div class="option">
               {{option.Name}}
             </div>
             </a>
-            <a class="button" modal-select ng-model="selectedDistrict" options="districtsList" modal-title="Select your District" has-search="true" header-footer-class="bar-positive" option-property="city" ng-disabled="!selectedState" style="margin-left: 0;">District
+            <a class="button icon-right ion-arrow-down-b" modal-select ng-model="selectedDistrict" options="districtsList" modal-title="Select your District" has-search="true" header-footer-class="bar-positive" option-property="city" ng-disabled="!selectedState" style="margin-left: 0;">District
             <div class="option">
               {{option.city}}
             </div>

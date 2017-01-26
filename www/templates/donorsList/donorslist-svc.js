@@ -27,7 +27,7 @@ angular.module('aid.services', [])
         formattedDonor.address = donorObj.address;
         formattedDonor.district = donorObj.district;
         formattedDonor.state = donorObj.stateName;
-        formattedDonor.country = donorObj.country;
+        // formattedDonor.country = donorObj.country;
         console.log("formattedDonor:" + angular.toJson(formattedDonor));
         return formattedDonor;
     }
