@@ -31,6 +31,9 @@ angular.module('aid.services', [])
         console.log("formattedDonor:" + angular.toJson(formattedDonor));
         return formattedDonor;
     }
+    this.getAppInfo=function(){
+        return $http.get(localStorage.wsURL + "appinfo");
+    }
 })
 
 .service('GenericSvc', function($ionicLoading,$http) {

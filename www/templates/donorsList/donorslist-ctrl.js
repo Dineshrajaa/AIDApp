@@ -13,8 +13,9 @@ angular.module('aid.controllers', ['aid.services'])
             console.warn($scope.statesList);
         }, function(err) {
             GenericSvc.showToast('Unable to get states');
-        }).finally(function() {
+        }).finally(function() {            
             GenericSvc.hideLoader();
+            $scope.fetchAppInfo();
         });
     };
 
@@ -66,6 +67,24 @@ angular.module('aid.controllers', ['aid.services'])
             GenericSvc.hideLoader();
             $scope.fetchStates();
         });
+    };
+    $scope.fetchAppInfo=function(){
+        // Method to get the app info to share with users
+        GenericSvc.showLoader('Fetching App info');
+        DonorsSvc.getAppInfo().then(function(res) {
+            $scope.appInfo = res.data;
+            console.warn($scope.appInfo);
+        }, function(err) {
+            GenericSvc.showToast('Unable to fetch app info');
+        }).finally(function() {
+            // Stop the spinning
+            GenericSvc.hideLoader();
+        });        
+    };
+
+    $scope.shareAppInfo=function(){
+        // Method to share the app info with friends in social media
+        window.plugins.socialsharing.share($scope.appInfo[0].appName, null, null, $scope.appInfo[0].appURL);
     };
 
     $scope.setSortCriteria = function(criteria) {
