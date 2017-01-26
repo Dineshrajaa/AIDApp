@@ -34,9 +34,9 @@
         <br>
         <span class="filteredtext" ng-if="filtered">
         Found <b>{{filtered.length}}</b> 
-        <span ng-if="myFilter.bloodGroup"> <b>{{myFilter.bloodGroup}}</b></span>
+        <span ng-if="myFilter.bloodGroup"> - <b>{{myFilter.bloodGroup}}</b></span>
         <span> donors</span>
-        <span ng-if="myFilter.district"> in {{myFilter.district}}</span>
+        <span ng-if="myFilter.district"> ({{myFilter.district}})</span>
         </span>
         <div class="donorList">
             <!-- <label class="item item-input">
